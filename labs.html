@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Labs</title>
+</head>
+<body>
+  <header>
+    <h1>Labs</h1>
+    <nav>
+      <ul style="list-style: none; display: flex; gap: 20px; padding: 0;">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="labs.html">Labs</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Semantic Tag Demo</h2>
+      <article>
+        <h3>Experiment 1: Table Elements</h3>
+        <table>
+          <caption>Sample Table</caption>
+          <colgroup>
+            <col span="2" style="background-color: #f2f2f2;" />
+            <col style="background-color: #e0e0e0;" />
+          </colgroup>
+          <thead>
+            <tr><th>Item</th><th>Quantity</th><th>Price</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Pen</td><td>10</td><td>$1.00</td></tr>
+            <tr><td>Notebook</td><td>5</td><td>$2.50</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article>
+        <h3>Experiment 2: Forms and Inputs</h3>
+        <form>
+          <fieldset>
+            <legend>Experiment Feedback</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" /><br />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" /><br />
+
+            <label for="rating">Rating:</label>
+            <select id="rating" name="rating">
+              <option value="excellent">Excellent</option>
+              <option value="good">Good</option>
+              <option value="fair">Fair</option>
+            </select><br />
+
+            <label for="comments">Comments:</label><br />
+            <textarea id="comments" name="comments" rows="4" cols="40"></textarea><br />
+
+            <button type="submit">Submit</button>
+          </fieldset>
+        </form>
+      </article>
+
+      <article>
+        <h3>Experiment 3: Media</h3>
+        <figure>
+          <img src="assets/q1.jpg" alt="Lab test image" width="300" />
+          <figcaption>Sample media for lab usage.</figcaption>
+        </figure>
+        <audio controls>
+          <source src="assets/sample-audio.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+        <video width="320" height="240" controls>
+          <source src="assets/sample-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </article>
+
+      <article>
+        <h3>Experiment 4: Rare Semantic Tags</h3>
+        <details>
+          <summary>Click to view semantic tag demos</summary>
+          <dl>
+            <dt><dfn>ins</dfn></dt>
+            <dd><ins>This is inserted text.</ins></dd>
+
+            <dt><dfn>del</dfn></dt>
+            <dd><del>This is deleted text.</del></dd>
+
+            <dt><dfn>kbd</dfn></dt>
+            <dd>Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save.</dd>
+
+            <dt><dfn>mark</dfn></dt>
+            <dd>This sentence contains a <mark>highlight</mark>.</dd>
+
+            <dt><dfn>pre</dfn></dt>
+            <dd><pre>Code block with    spaces and newlines</pre></dd>
+
+            <dt><dfn>code</dfn></dt>
+            <dd><code>console.log("Hello World");</code></dd>
+
+            <dt><dfn>abbr</dfn></dt>
+            <dd><abbr title="World Health Organization">WHO</abbr></dd>
+
+            <dt><dfn>cite</dfn></dt>
+            <dd><cite>The Great Gatsby</cite></dd>
+
+            <dt><dfn>time</dfn></dt>
+            <dd><time datetime="2025-07-13">July 13, 2025</time></dd>
+          </dl>
+        </details>
+      </article>
+
+      <article>
+        <h3>Experiment 5: Hello World Custom Element</h3>
+        <p>Below is a custom element called <code>&lt;hello-world&gt;</code> that prints "Hello World!" in the console.</p>
+      
+        <hello-world></hello-world>
+      
+        <script>
+          class HelloWorld extends HTMLElement {
+            constructor() {
+              super();
+              console.log("Hello World!");
+            }
+          }
+          customElements.define('hello-world', HelloWorld);
+        </script>
+                <dialog open>This is a native dialog tag example.</dialog>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    <address>
+      Contact: <a href="mailto:yal144@ucsd.edu">yal144@ucsd.edu</a>
+    </address>
+    <p><small>&copy; 2025 Yanhua Liu</small></p>
+  </footer>
+</body>
+</html>
