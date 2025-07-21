@@ -4,9 +4,9 @@
   --font-body: 'Roboto', sans-serif;
 }
 
-/* nav */
+/* nav & header color match with footer(ucsd color)*/
 .nav-header {
-  background-color: #002855; /* Match UCSD Blue from footer */
+  background-color: #002855; /* UCSD Blue */
   padding: 2rem 0;
   border-bottom: 1px solid #ccc;
 }
@@ -23,7 +23,7 @@
 .site-title {
   font-size: 2rem;
   font-weight: bold;
-  color: #FFD200;
+  color: #FFD200; /* UCSD Yellow */
   text-transform: uppercase;
 }
 
@@ -37,7 +37,7 @@
 
 .nav-list li a {
   text-decoration: none;
-  color: #FFD200; /* Match UCSD Yellow from footer */
+  color: #FFD200;
   font-weight: 500;
   font-size: 1rem;
   position: relative;
