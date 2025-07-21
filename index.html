@@ -4,28 +4,24 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/style.css">
     <title>HomePage</title>
-    <style>
-        my-section {
-            display: block;
-            padding: 1em;
-            border: 2px dashed gray;
-            background-color: #f9f9f9;
-        }
-    </style>
 </head>
 
 <body>
-    <header>
-        <h1>HomePage</h1>
+    <header class="nav-header">
+      <div class="nav-container">
+        <div class="site-title">CSE134B</div>
         <nav>
-            <ul style="list-style: none; display: flex; gap: 20px; padding: 0;">
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="labs.html">Labs</a></li>
-            </ul>
+          <ul class="nav-list">
+            <li><a href="index.html" class="active">HomePage</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+          </ul>
         </nav>
+      </div>
     </header>
 
     <main>
@@ -40,10 +36,14 @@
         <section>
             <h2>Featured Image</h2>
             <figure>
-                <img src="assets/index.jpg" alt="A sample featured image" width="300">
-                <figcaption>This is a placeholder image representing my portfolio.</figcaption>
+              <picture>
+                <source srcset="assets/index.webp" type="image/webp" />
+                <source srcset="assets/index.jpg" type="image/jpeg" />
+                <img src="assets/index.jpg" alt="A sample featured image" class="responsive-image">
+              </picture>
+              <figcaption>This is a placeholder image representing my portfolio.</figcaption>
             </figure>
-        </section>
+          </section>
 
         <section>
             <h2>Quote</h2>
@@ -58,18 +58,19 @@
             <progress id="portfolio-progress" value="20" max="100">20%</progress>
         </section>
 
-        <my-section>
+        <section class="custom">
             <h2>Custom Semantic Element</h2>
             <p>This content is inside a semantic custom element.</p>
-        </my-section>
-
+        </section>
     </main>
 
-    <footer>
-        <address>
-            Contact me at: <a href="yal144@ucsd.com">yal144@ucsd.com</a>
-        </address>
-        <p><small>&copy; 2025 Yanhua Liu</small></p>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <address>
+                Contact me at: <a href="mailto:yal144@ucsd.com">yal144@ucsd.com</a>
+            </address>
+            <p><small>&copy; 2025 Yanhua Liu. All rights reserved.</small></p>
+        </div>
     </footer>
 </body>
 

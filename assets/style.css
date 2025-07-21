@@ -1,0 +1,274 @@
+:root {
+  --primary-color: #0077cc;
+  --accent-color: #ff6600;
+  --font-body: 'Roboto', sans-serif;
+}
+
+/* nav */
+.nav-header {
+  background-color: #002855; /* Match UCSD Blue from footer */
+  padding: 2rem 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #FFD200;
+  text-transform: uppercase;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #FFD200; /* Match UCSD Yellow from footer */
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  padding-bottom: 0.3rem;
+}
+
+.nav-list li a:hover,
+.nav-list li a.active {
+  color: #ffffff;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-list li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color, #0077cc);
+  transition: width 0.3s;
+}
+
+.nav-list li a:hover::after,
+.nav-list li a.active::after {
+  width: 100%;
+  transition: width 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+}
+
+/* body */
+body {
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  color: #000;
+  background-color: #fff;
+}
+
+section {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+section:nth-of-type(1) {
+  background: linear-gradient(to right, #f0f8ff, #e6f0fa);
+}
+
+section:nth-of-type(2) {
+  background: linear-gradient(to right, #e6f7ff, #d0ebff);
+}
+
+section:nth-of-type(3) {
+  background: linear-gradient(to right, #fff9e6, #fef4cc);
+}
+
+section:nth-of-type(4) {
+  background: linear-gradient(to right, #f3ffe6, #e6fadc);
+}
+
+section:nth-of-type(5) {
+  background: linear-gradient(to right, #fce6ff, #f8d0fc);
+}
+
+.hero {
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(to bottom right, #0077cc, #a0d2eb);
+  animation: fadeIn 1s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hero:hover {
+  transform: scale(1.02);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* image */
+img,
+picture {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 0.5rem;
+}
+
+img:hover,
+picture:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease-in-out;
+}
+
+.responsive-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 0.5rem;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  display: none;
+  z-index: 1000;
+}
+
+.back-to-top:hover {
+  background-color: #005fa3;
+}
+
+@media (min-width: 768px) {
+  .back-to-top {
+    display: block;
+  }
+}
+
+/* footer */
+.site-footer {
+  background-color: #002855; /* UCSD Blue */
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.site-footer a {
+  color: #FFD200; /* UCSD Yellow */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-content {
+  max-width: 960px;
+  margin: auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #f0f0f0;
+  }
+
+  .nav-header {
+    background-color: #1f1f1f;
+    border-bottom: 1px solid #444;
+  }
+
+  .nav-list li a {
+    color: #ccc;
+  }
+
+  .nav-list li a:hover,
+  .nav-list li a.active {
+    color: #FFD200;
+  }
+
+  .site-footer {
+    background-color: #1f1f1f;
+    color: #ddd;
+  }
+
+  .site-footer a {
+    color: #89CFF0;
+  }
+}
+
+/* for contact.html */
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-family: var(--font-body);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.submit-button:hover {
+  background-color: #005fa3;
+}

@@ -4,21 +4,25 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/style.css">
     <title>Projects</title>
 </head>
 
 <body>
-    <header>
-        <h1>My Projects</h1>
-        <nav>
-            <ul style="list-style: none; display: flex; gap: 20px; padding: 0;">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="labs.html">Labs</a></li>
+    <header class="nav-header">
+        <div class="nav-container">
+          <div class="site-title">CSE134B</div>
+          <nav>
+            <ul class="nav-list">
+              <li><a href="index.html">HomePage</a></li>
+              <li><a href="about.html">About Me</a></li>
+              <li><a href="projects.html" class="active">Projects</a></li>
+              <li><a href="resume.html">Resume</a></li>
+              <li><a href="contact.html">Contact Me</a></li>
             </ul>
-        </nav>
-    </header>
+          </nav>
+        </div>
+      </header>
 
     <main>
         <article>
@@ -27,10 +31,14 @@
                 <h3>Portfolio Website</h3>
                 <p>This project demonstrates my ability to create a semantically structured HTML website with multiple
                     pages.</p>
-                <figure>
-                    <img src="assets/q1.jpg" alt="Screenshot of portfolio site" width="300">
-                    <figcaption>Homepage of my portfolio site.</figcaption>
-                </figure>
+                    <figure>
+                        <picture>
+                          <source srcset="assets/q1-800.webp" type="image/webp" media="(min-width: 800px)">
+                          <source srcset="assets/q1-480.webp" type="image/webp" media="(min-width: 480px)">
+                          <img src="assets/q1.jpg" alt="Screenshot of portfolio site" width="300" style="object-fit: cover; object-position: center;">
+                        </picture>
+                        <figcaption>Homepage of my portfolio site.</figcaption>
+                      </figure>
             </section>
 
             <section>
@@ -101,8 +109,13 @@
         </article>
     </main>
 
-    <footer>
-        <p><small>&copy; 2025 Yanhua Liu</small></p>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <address>
+                Contact me at: <a href="mailto:yal144@ucsd.com">yal144@ucsd.com</a>
+            </address>
+            <p><small>&copy; 2025 Yanhua Liu. All rights reserved.</small></p>
+        </div>
     </footer>
 </body>
 
