@@ -21,21 +21,6 @@
               <li><a href="contact.html" class="active">Contact Me</a></li>
             </ul>
           </nav>
-          <div class="theme-switch-wrapper">
-            <!-- Label showing current theme mode -->
-            <span class="theme-switch-label" id="themeLabel">Light Mode</span>
-            <label class="theme-switch">
-              <!-- Checkbox input for toggling theme -->
-              <input type="checkbox" id="themeToggle" aria-label="Toggle light/dark mode">
-              <span class="slider">
-                <span class="switch-text on">ON</span>
-                <span class="switch-text off">OFF</span>
-              </span>
-            </label>
-          </div>
-          <noscript>
-            <div style="color:red;text-align:center;">Theme toggle requires JavaScript.</div>
-          </noscript>
         </div>
       </header>
 
@@ -93,43 +78,9 @@
             <address>
                 Contact me at: <a href="mailto:yal144@ucsd.com">yal144@ucsd.com</a>
             </address>
-            <p><small class="copyright-color">&copy; 2025 Yanhua Liu. All rights reserved.</small></p>
+            <p><small>&copy; 2025 Yanhua Liu. All rights reserved.</small></p>
         </div>
     </footer>
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const themeToggle = document.getElementById('themeToggle');
-      const themeLabel = document.getElementById('themeLabel');
-      if (!themeToggle || !themeLabel) return;
-
-      // Initialize theme based on localStorage
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        themeToggle.checked = true;
-        themeLabel.textContent = 'Dark Mode';
-      } else {
-        document.documentElement.removeAttribute('data-theme');
-        themeToggle.checked = false;
-        themeLabel.textContent = 'Light Mode';
-      }
-
-      // Listen for toggle changes
-      themeToggle.addEventListener('change', function () {
-        if (this.checked) {
-          // Enable dark mode
-          document.documentElement.setAttribute('data-theme', 'dark');
-          localStorage.setItem('theme', 'dark');
-          themeLabel.textContent = 'Dark Mode';
-        } else {
-          // Enable light mode
-          document.documentElement.removeAttribute('data-theme');
-          localStorage.setItem('theme', 'light');
-          themeLabel.textContent = 'Light Mode';
-        }
-      });
-    });
-    </script>
 </body>
 
 </html>

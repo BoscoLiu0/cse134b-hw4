@@ -21,6 +21,19 @@
               <li><a href="contact.html">Contact Me</a></li>
             </ul>
           </nav>
+          <div class="theme-switch-wrapper">
+            <label class="theme-switch-label" for="theme-switch">
+              <span id="theme-switch-text">Light Mode</span>
+              <span class="theme-switch">
+                <input type="checkbox" id="theme-switch" aria-label="Toggle dark mode" />
+                <span class="slider round" aria-hidden="true"></span>
+              </span>
+            </label>
+            <noscript>
+              <style>.theme-switch-wrapper{display:none;}</style>
+              <div style="color:red;text-align:center;">Theme toggle requires JavaScript.</div>
+            </noscript>
+          </div>
         </div>
       </header>
 
@@ -104,9 +117,45 @@
             <address>
                 Contact me at: <a href="mailto:yal144@ucsd.edu">yal144@ucsd.edu</a>
             </address>
-            <p><small>&copy; 2025 Yanhua Liu. All rights reserved.</small></p>
+            <p><small class="copyright-color">&copy; 2025 Yanhua Liu. All rights reserved.</small></p>
         </div>
     </footer>
+    <script>
+      // Theme toggle logic using slider switch and localStorage
+      document.addEventListener("DOMContentLoaded", function () {
+        const themeSwitch = document.getElementById('theme-switch');
+        const themeSwitchText = document.getElementById('theme-switch-text');
+        // Helper to set theme and label
+        function setTheme(dark) {
+          if (dark) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            themeSwitch.checked = true;
+            themeSwitchText.textContent = 'Dark Mode';
+          } else {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+            themeSwitch.checked = false;
+            themeSwitchText.textContent = 'Light Mode';
+          }
+        }
+        // Initialize from localStorage or system preference
+        const userTheme = localStorage.getItem('theme');
+        if (userTheme === 'dark') {
+          setTheme(true);
+        } else if (userTheme === 'light') {
+          setTheme(false);
+        } else {
+          // If not set, use system preference
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          setTheme(prefersDark);
+        }
+        // Listen for toggle
+        themeSwitch.addEventListener('change', function () {
+          setTheme(themeSwitch.checked);
+        });
+      });
+    </script>
 </body>
 
 </html>
